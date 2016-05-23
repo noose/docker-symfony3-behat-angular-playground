@@ -1,0 +1,12 @@
+default:
+    extensions:
+        Behat\Symfony2Extension: 
+            kernel:
+                env: test
+
+    suites:
+        default:
+            contexts:
+                - FeatureContext:
+                    entityManager: '@doctrine.orm.entity_manager'
+                    client: '@csa_guzzle.client.local_test_api'

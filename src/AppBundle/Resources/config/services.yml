@@ -1,0 +1,8 @@
+services:
+  app.articles:
+    class: AppBundle\Service\ArticleService
+    calls:
+      - [setEntityManager, ["@doctrine.orm.entity_manager"]]
+      - [setEventDispatcher, ["@event_dispatcher"]]
+      - [setRepository, ["@=service('doctrine.orm.default_entity_manager').getRepository('AppBundle:Article')"]]
+

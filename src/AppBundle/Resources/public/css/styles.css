@@ -1,0 +1,45 @@
+.highlight {
+	color: #AA3333;
+}
+
+/* add scrollbar to autocomple */
+.angucomplete-dropdown {
+	overflow-y: auto;
+	max-height: 200px;
+}
+
+.autocomplete-wrapper {
+	width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+article {
+	width: 1170px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.image-wrapper {
+	width: 112px;
+	float: left;
+	padding-right: 25px;
+	padding-bottom: 10px;
+}
+
+.image-wrapper img {
+	width: 112px;
+}
+
+.image-wrapper span {
+	font-size: 10px;
+	color: #ccc;
+}
+
+.article-meta {
+	color: #aaa;
+	font-size: 12px;
+}
+p {
+	font-size: 14px;
+}

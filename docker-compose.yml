@@ -1,0 +1,16 @@
+app:
+    build: docker/php
+    ports:
+        - 8000:8000
+    volumes:
+        - ".:/app"
+    links:
+        - mysql:db
+
+mysql:
+    image: mysql:latest
+    environment:
+        MYSQL_ROOT_PASSWORD: password
+        MYSQL_DATABASE: symfony
+        MYSQL_USER: symfony_user
+        MYSQL_PASSWORD: symfony_password

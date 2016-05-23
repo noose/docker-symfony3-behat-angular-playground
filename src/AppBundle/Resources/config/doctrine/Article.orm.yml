@@ -1,0 +1,30 @@
+AppBundle\Entity\Article:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ArticleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        description:
+            type: text
+        dateAdd:
+            type: datetime
+            column: date_add
+        dateCreate:
+            type: datetime
+            column: date_create
+        author:
+            type: string
+            length: 255
+        link:
+            type: text
+        thumbnail:
+            type: text
+    lifecycleCallbacks: {  }

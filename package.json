@@ -1,0 +1,27 @@
+{
+  "name": "demoapp",
+  "version": "1.0.0",
+  "description": "sii ===",
+  "main": "php bin/console server:start",
+  "directories": {
+    "test": "tests/js/"
+  },
+  "scripts": {
+    "test": "node node_modules/karma/bin/karma start tests/js/karma.conf.js",
+	"postinstall": "node_modules/.bin/bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/noose/sii.git"
+  },
+  "author": "Paweł Kobylak <pawel@ncreations.pl>",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/noose/sii#readme",
+  "devDependencies": {
+    "phantomjs-prebuilt": "^2.1.7",
+    "protractor": "^3.3.0"
+  },
+  "dependencies": {
+    "bower": "^1.7.9"
+  }
+}

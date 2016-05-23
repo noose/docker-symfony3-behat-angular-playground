@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	{% verbatim %}
+<div ng-controller="ArticleController as ctrl">
+	<div class="autocomplete-wrapper">
+		<angucomplete-alt id="articles"
+			placeholder="Search articles"
+			pause="200"
+			selected-object="selectedArticle"
+			remote-url="/search/?query="
+			remote-url-data-field="results"
+			title-field="title"
+			description-field="shortDescription"
+			image-field="thumbnail"
+			minlength="2"
+			match-class="highlight"
+			input-class="form-control form-control-small">
+	</div>
+
+	<article ng-if="article">
+		<h1>{{ ::article.title }}</h1>
+		<p class="article-meta">
+			<strong>Author</strong>: <span class="author">{{ ::article.author }}</span>, <strong>Published</strong>: <span class="date-create">{{ ::article.dateCreate }}</span>
+		</p>
+		<div class="image-wrapper" ng-if="article.thumbnail">
+			<img src="{{ ::article.thumbnail }}" ng-if="article.thumbnail" alt="{{ ::article.title}}">
+		</div>
+		<p>{{ ::article.description }}</p>
+		<p>Want more? <a href="{{ ::article.link }}">Go to the {{ ::article.author }} site</a>.</p>
+
+	</article>
+</div>
+    {% endverbatim %}
+{% endblock %}
+
+{% block stylesheets %}
+	{% stylesheets
+	'@AppBundle/Resources/public/js/vendors/*/*.css'
+	'@AppBundle/Resources/public/css/styles.css' %}
+	<link rel="stylesheet" href="{{ asset_url }}">
+	{% endstylesheets %}
+{% endblock %}
+
+{% block javascripts %}
+	{% javascripts
+	'@AppBundle/Resources/public/js/vendors/angular/angular.min.js'
+	'@AppBundle/Resources/public/js/vendors/angular-route/angular-route.min.js'
+	'@AppBundle/Resources/public/js/vendors/angucomplete-alt/dist/angucomplete-alt.min.js'
+	output='/js/compiled/vendors.js' %}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+
+	{% javascripts '@AppBundle/Resources/public/js/*.js' output='/js/compiled/app.js' %}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
+{% endblock %}
