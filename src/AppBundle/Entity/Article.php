@@ -58,6 +58,16 @@ class Article
     }
 
     /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
      * Set title
      *
      * @param string $title
@@ -72,13 +82,13 @@ class Article
     }
 
     /**
-     * Get title
+     * Get description
      *
      * @return string
      */
-    public function getTitle()
+    public function getDescription()
     {
-        return $this->title;
+        return $this->description;
     }
 
     /**
@@ -96,13 +106,13 @@ class Article
     }
 
     /**
-     * Get description
+     * Get dateAdd
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getDescription()
+    public function getDateAdd()
     {
-        return $this->description;
+        return $this->dateAdd;
     }
 
     /**
@@ -120,13 +130,13 @@ class Article
     }
 
     /**
-     * Get dateAdd
+     * Get dateCreate
      *
      * @return \DateTime
      */
-    public function getDateAdd()
+    public function getDateCreate()
     {
-        return $this->dateAdd;
+        return $this->dateCreate;
     }
 
     /**
@@ -144,13 +154,13 @@ class Article
     }
 
     /**
-     * Get dateCreate
+     * Get author
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getDateCreate()
+    public function getAuthor()
     {
-        return $this->dateCreate;
+        return $this->author;
     }
 
     /**
@@ -168,13 +178,13 @@ class Article
     }
 
     /**
-     * Get author
+     * Get link
      *
      * @return string
      */
-    public function getAuthor()
+    public function getLink()
     {
-        return $this->author;
+        return $this->link;
     }
 
     /**
@@ -192,13 +202,13 @@ class Article
     }
 
     /**
-     * Get link
+     * Get thumbnail
      *
      * @return string
      */
-    public function getLink()
+    public function getThumbnail()
     {
-        return $this->link;
+        return $this->thumbnail;
     }
 
     /**
@@ -212,16 +222,6 @@ class Article
         $this->thumbnail = $thumbnail;
 
         return $this;
-    }
-
-    /**
-     * Get thumbnail
-     *
-     * @return string
-     */
-    public function getThumbnail()
-    {
-        return $this->thumbnail;
     }
 }
 
